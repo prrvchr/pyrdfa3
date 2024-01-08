@@ -1,0 +1,15 @@
+namespace: pyrdfa3
+output:
+  file_path: ./Fluid-Attacks-Results.csv
+  format: CSV
+working_dir: .
+sast:
+  include:
+    - .
+  exclude:
+    - ./Fluid-Attacks-Scan.sh
+sca:
+  include:
+    - .
+language: EN
+strict: true

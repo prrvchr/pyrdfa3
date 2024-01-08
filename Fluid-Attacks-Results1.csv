@@ -1,0 +1,56 @@
+title,cwe,description,cvss,finding,stream,kind,where,snippet,method
+313. Insecure service configuration - Certificates,CWE-295,Server certificates are not verified during SSL/TLS connections in pyrdfa3/build/lib/pyRdfa/utils.py,CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N/E:U/RL:O/RC:C,https://docs.fluidattacks.com/criteria/vulnerabilities/313,skims,SAST,86,"
+   76 |    url = name.split('#')[0]
+   77 |    if socket.getfqdn().endswith('.w3.org'):
+   78 |     import checkremote
+   79 |     checkremote.check_url_safety(url)
+   80 |    if 'Accept' not in additional_headers:
+   81 |     additional_headers['Accept'] = 'text/html, application/xhtml+xml'
+   82 |
+   83 |    import requests
+   84 |    # Switching off the verification is not cool. But, at least for now, too many
+   85 |    # sites still go wrong because the cerficates are not o.k. with request...
+>  86 |    r = requests.get(url, headers=additional_headers, verify=False)
+   87 |    self.data = r.content
+   88 |    self.headers = r.headers
+   89 |
+   90 |    if URIOpener.CONTENT_TYPE in self.headers :
+   91 |     # The call below will remove the possible media type parameters, like charset settings
+   92 |     ct = content_type(self.headers[URIOpener.CONTENT_TYPE])
+   93 |     self.content_type = ct.media_type
+   94 |     if 'charset' in ct.parmdict :
+   95 |      self.charset = ct.parmdict['charset']
+   96 |     else :
+      ^ Col 0
+",python.python_unsafe_certificate_validation
+313. Insecure service configuration - Certificates,CWE-295,Server certificates are not verified during SSL/TLS connections in pyrdfa3/pyRdfa/utils.py,CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N/E:U/RL:O/RC:C,https://docs.fluidattacks.com/criteria/vulnerabilities/313,skims,SAST,86,"
+   76 |    url = name.split('#')[0]
+   77 |    if socket.getfqdn().endswith('.w3.org'):
+   78 |     import checkremote
+   79 |     checkremote.check_url_safety(url)
+   80 |    if 'Accept' not in additional_headers:
+   81 |     additional_headers['Accept'] = 'text/html, application/xhtml+xml'
+   82 |
+   83 |    import requests
+   84 |    # Switching off the verification is not cool. But, at least for now, too many
+   85 |    # sites still go wrong because the certificates are not o.k. with request...
+>  86 |    r = requests.get(url, headers=additional_headers, verify=False)
+   87 |    self.data = r.content
+   88 |    self.headers = r.headers
+   89 |
+   90 |    if URIOpener.CONTENT_TYPE in self.headers :
+   91 |     # The call below will remove the possible media type parameters, like charset settings
+   92 |     ct = content_type(self.headers[URIOpener.CONTENT_TYPE])
+   93 |     self.content_type = ct.media_type
+   94 |     if 'charset' in ct.parmdict :
+   95 |      self.charset = ct.parmdict['charset']
+   96 |     else :
+      ^ Col 0
+",python.python_unsafe_certificate_validation
+380. Supply Chain Attack - Docker,CWE-749,Ensure the specified container image has a digest. in pyrdfa3/Fluid-Attacks-Scan.sh,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N/E:U/RL:O/RC:R,https://docs.fluidattacks.com/criteria/vulnerabilities/380,skims,SAST,3,"
+  1 | #!/bin/bash
+  2 |
+> 3 | docker run -v ~/github/pyrdfa3:/working-dir ghcr.io/fluidattacks/makes/amd64 m gitlab:fluidattacks/universe@trunk /skims
+    ^ Col 0
+",bash.bash_image_has_digest
+Summary: 3 vulnerabilities were found in your targets.

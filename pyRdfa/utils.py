@@ -83,7 +83,8 @@ class URIOpener :
 			import requests
 			# Switching off the verification is not cool. But, at least for now, too many
 			# sites still go wrong because the certificates are not o.k. with request...
-			r = requests.get(url, headers=additional_headers, verify=False)
+			#r = requests.get(url, headers=additional_headers, verify=False)
+			r = requests.get(url, headers=additional_headers)
 			self.data	= r.content
 			self.headers	= r.headers
 			
