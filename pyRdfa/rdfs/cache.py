@@ -241,6 +241,8 @@ class CachedVocab(CachedVocabIndex) :
 		@param URI: real URI for the vocabulary file
 		@param options: the error handler (option) object to send warnings to
 		@type options: L{options.Options}
+		@param verify: whether the SSL certificate needs to be verified.
+		@type verify: bool
 		"""
 		# First see if this particular vocab has been handled before. If yes, it is extracted and everything
 		# else can be forgotten. 
