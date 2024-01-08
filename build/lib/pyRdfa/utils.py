@@ -66,7 +66,7 @@ class URIOpener :
 	CONTENT_TYPE		= 'Content-Type'
 	LAST_MODIFIED		= 'Last-Modified'
 	EXPIRES				= 'Expires'
-	def __init__(self, name, additional_headers = {}, verify=True) :
+	def __init__(self, name, additional_headers = {}, verify = True) :
 		"""
 		@param name: URL to be opened
 		@keyword additional_headers: additional HTTP request headers to be added to the call
@@ -81,11 +81,11 @@ class URIOpener :
 				additional_headers['Accept'] = 'text/html, application/xhtml+xml'
 				
 			import requests
-			# Switching off the verification is not cool. But, at least for now, too many
-			# sites still go wrong because the cerficates are not o.k. with request...
-			r = requests.get(url, headers=additional_headers, verify=verify)
-			self.data	= r.content
-			self.headers	= r.headers
+			# For security reason certificate verification is now done by default. But, can be
+			# disabled for sites still go wrong because the cerficates are not o.k. with request...
+			r = requests.get(url, headers = additional_headers, verify = verify)
+			self.data	 = r.content
+			self.headers = r.headers
 			
 			if URIOpener.CONTENT_TYPE in self.headers :
 				# The call below will remove the possible media type parameters, like charset settings
