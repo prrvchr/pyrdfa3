@@ -155,6 +155,9 @@ class Options :
 
 	@ivar experimental_features: whether experimental features should be activated; that is a developer's option...
 	@ivar check_lite: whether RDFa Lite should be checked, to generate warnings.
+
+	@ivar certifi_verify: whether the SSL certificate should be verified
+	@type certifi_verify: Boolean
 	"""
 	def __init__(self, output_default_graph       = True,
 					   output_processor_graph     = False,
@@ -167,7 +170,8 @@ class Options :
 					   refresh_vocab_cache        = False,
 					   add_informational_messages = False,
 					   check_lite                 = False,
-					   experimental_features      = False
+					   experimental_features      = False,
+					   certifi_verify             = True
 					   ) :
 		self.space_preserve 		    = space_preserve
 		self.transformers   		    = transformers
@@ -185,7 +189,8 @@ class Options :
 		if check_lite :
 			self.transformers.append(lite_prune)
 		self.experimental_features      = experimental_features
-			
+		self.certifi_verify             = certifi_verify
+		
 	def set_host_language(self, content_type) :
 		"""
 		Set the host language for processing, based on the recognized types. If this is not a recognized content type,

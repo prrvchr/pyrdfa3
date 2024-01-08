@@ -419,7 +419,7 @@ class pyRdfa :
 				# check if this is a URI, ie, if there is a valid 'scheme' part
 				# otherwise it is considered to be a simple file
 				if urlparse(name)[0] != "" :
-					url_request 	  = URIOpener(name)
+					url_request 	  = URIOpener(name, {}, self.options.certifi_verify)
 					self.base 		  = url_request.location
 					if self.media_type == "" :
 						if url_request.content_type in content_to_host_language :
@@ -732,6 +732,7 @@ def processURI(uri, outputFormat, form={}) :
 	 - C{vocab_cache_report=[true|false]} : whether vocab caching details should be reported. Default: C{false}
 	 - C{vocab_cache_bypass=[true|false]} : whether vocab caches have to be regenerated every time. Default: C{false}
 	 - C{rdfa_lite=[true|false]} : whether warnings should be generated for non RDFa Lite attribute usage. Default: C{false}
+	 - C{certifi_verify=[true|false]} : whether the SSL certificate needs to be verified. Default: C{true}
 
 	@param uri: URI to access. Note that the C{text:} and C{uploaded:} fake URI values are treated separately; the former is for textual intput (in which case a StringIO is used to get the data) and the latter is for uploaded file, where the form gives access to the file directly.
 	@param outputFormat: serialization format, as defined by the package. Currently "xml", "turtle", "nt", or "json". Default is "turtle", also used if any other string is given.
@@ -834,6 +835,7 @@ def processURI(uri, outputFormat, form={}) :
 	vocab_cache_report  = _get_option( "vocab_cache_report", "true", False)
 	refresh_vocab_cache = _get_option( "vocab_cache_refresh", "true", False)
 	vocab_expansion     = _get_option( "vocab_expansion", "true", False)
+	certifi_verify      = _get_option( "certifi_verify", "true", True)
 	if vocab_cache_report : output_processor_graph = True
 
 	options = Options(output_default_graph   = output_default_graph,
@@ -845,7 +847,8 @@ def processURI(uri, outputFormat, form={}) :
 					  refresh_vocab_cache    = refresh_vocab_cache,
 					  vocab_expansion        = vocab_expansion,
 					  embedded_rdf           = embedded_rdf,
-					  check_lite             = check_lite
+					  check_lite             = check_lite,
+					  certifi_verify         = certifi_verify
 					  )
 	processor = pyRdfa(options = options, base = base, media_type = media_type, rdfa_version = rdfa_version)
 

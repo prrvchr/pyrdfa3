@@ -50,7 +50,7 @@ from .. import HTTPError, RDFaError
 
 #############################################################################################################
 
-def return_graph(uri, options, newCache = False) :
+def return_graph(uri, options, newCache = False, verify = True) :
 	"""Parse a file, and return an RDFLib Graph. The URI's content type is checked and either one of
 	RDFLib's parsers is invoked (for the Turtle, RDF/XML, and N Triple cases) or a separate RDFa processing is invoked
 	on the RDFa content.
@@ -62,6 +62,7 @@ def return_graph(uri, options, newCache = False) :
 	@param uri: URI for the graph
 	@param options: used as a place where warnings can be sent
 	@param newCache: in case this is used with caching, whether a new cache is generated; that modifies the warning text
+	@param verify: whether the SSL certificate should be verified
 	@return: A tuple consisting of an RDFLib Graph instance and an expiration date); None if the dereferencing or the parsing was unsuccessful
 	"""
 	def return_to_cache(msg) :
@@ -76,7 +77,8 @@ def return_graph(uri, options, newCache = False) :
 	
 	try :
 		content = URIOpener(uri,
-							{'Accept' : 'text/html;q=0.8, application/xhtml+xml;q=0.8, text/turtle;q=1.0, application/rdf+xml;q=0.9'})
+							{'Accept' : 'text/html;q=0.8, application/xhtml+xml;q=0.8, text/turtle;q=1.0, application/rdf+xml;q=0.9'},
+							verify)
 	except HTTPError :
 		(type,value,traceback) = sys.exc_info()
 		return_to_cache(value)

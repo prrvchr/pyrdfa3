@@ -66,7 +66,7 @@ class URIOpener :
 	CONTENT_TYPE		= 'Content-Type'
 	LAST_MODIFIED		= 'Last-Modified'
 	EXPIRES				= 'Expires'
-	def __init__(self, name, additional_headers = {}) :
+	def __init__(self, name, additional_headers = {}, verify=True) :
 		"""
 		@param name: URL to be opened
 		@keyword additional_headers: additional HTTP request headers to be added to the call
@@ -83,8 +83,7 @@ class URIOpener :
 			import requests
 			# Switching off the verification is not cool. But, at least for now, too many
 			# sites still go wrong because the cerficates are not o.k. with request...
-			#r = requests.get(url, headers=additional_headers, verify=False)
-			r = requests.get(url, headers=additional_headers)
+			r = requests.get(url, headers=additional_headers, verify=verify)
 			self.data	= r.content
 			self.headers	= r.headers
 			

@@ -46,8 +46,6 @@ from . import VocabCachingInfo
 # Regular expression object for a general XML application media type
 xml_application_media_type = re.compile("application/[a-zA-Z0-9]+\+xml")
 
-from ..utils import URIOpener
-
 #===========================================================================================
 if PY3 :
 	import pickle
@@ -238,7 +236,7 @@ class CachedVocab(CachedVocabIndex) :
 	@cvar runtime_cache : a run time cache for already 'seen' vocabulary files. Apart from (marginally) speeding up processing, this also prevents recursion
 	@type runtime_cache : dictionary
 	"""
-	def __init__(self, URI, options = None) :
+	def __init__(self, URI, options = None, verify = True) :
 		"""
 		@param URI: real URI for the vocabulary file
 		@param options: the error handler (option) object to send warnings to
@@ -266,7 +264,7 @@ class CachedVocab(CachedVocabIndex) :
 			if self.report: options.add_info("No cache exists for %s, generating one" % URI, VocabCachingInfo)
 			
 			# Store all the cache data unless caching proves to be impossible
-			if self._get_vocab_data(newCache = True) and self.caching :
+			if self._get_vocab_data(verify, newCache = True) and self.caching :
 				self.filename = create_file_name(self.uri)
 				self._store_caches()
 				if self.report:
@@ -293,7 +291,7 @@ class CachedVocab(CachedVocabIndex) :
 					else :
 						options.add_info("Cache timeout; refreshing the cache for %s" % URI, VocabCachingInfo)
 				# we have to refresh the graph
-				if self._get_vocab_data(newCache = False) == False :
+				if self._get_vocab_data(verify, newCache = False) == False :
 					# bugger; the cache could not be refreshed, using the current one, and setting the cache artificially
 					# to be valid for the coming hour, hoping that the access issues will be resolved by then...
 					if self.report:
@@ -313,10 +311,10 @@ class CachedVocab(CachedVocabIndex) :
 					
 				self._store_caches()
 
-	def _get_vocab_data(self, newCache = True) :
+	def _get_vocab_data(self, verify, newCache = True) :
 		"""Just a macro like function to get the data to be cached"""		
 		from pyRdfa.rdfs.process import return_graph
-		(self.graph, self.expiration_date) = return_graph(self.uri, self.options, newCache)
+		(self.graph, self.expiration_date) = return_graph(self.uri, self.options, newCache, verify)
 		return self.graph != None
 
 	def _store_caches(self) :
@@ -335,10 +333,11 @@ class CachedVocab(CachedVocabIndex) :
 		
 #########################################################################################################################################
 
-def offline_cache_generation(args) :
+def offline_cache_generation(args, verify = True) :
 	"""Generate a cache for the vocabulary in args.
 	
-	@param args: array of vocabulary URIs.
+	@param args:   array of vocabulary URIs.
+	@param verify: whether the SSL certificate needs to be verified.
 	"""
 	class LocalOption :
 		def __init__(self) :
@@ -384,10 +383,10 @@ def offline_cache_generation(args) :
 	for uri in args :
 		# This should write the cache
 		print( ">>>>> Writing Cache <<<<<" )
-		writ = CachedVocab(uri,options = LocalOption(),report = True)
+		writ = CachedVocab(uri, options = LocalOption(), verify)
 		# Now read it back and print the content for tracing
 		print( ">>>>> Reading Cache <<<<<" )
-		rd = CachedVocab(uri,options = LocalOption(),report = True)
+		rd = CachedVocab(uri, options = LocalOption(), verify)
 		print( "URI: " + uri )
 		print( "default vocab: " + rd.vocabulary )
 		print( "terms: %s prefixes: %s" % (rd.terms,rd.ns) )
