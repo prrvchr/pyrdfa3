@@ -84,8 +84,8 @@ class URIOpener :
 			# For security reason certificate verification is now done by default. But, can be
 			# disabled for sites still go wrong because the cerficates are not o.k. with request...
 			r = requests.get(url, headers = additional_headers, verify = verify)
-			self.data	 = r.content
-			self.headers = r.headers
+			self.data		= r.content
+			self.headers	= r.headers
 			
 			if URIOpener.CONTENT_TYPE in self.headers :
 				# The call below will remove the possible media type parameters, like charset settings
