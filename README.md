@@ -4,7 +4,7 @@
 > **Note:** since I retired a few months ago I do not really maintain this package any more. I would be more than happy if an interested party was interested to take over. In the meantime, I have "archived" the repository to clearly signal that there is no maintenance. I would be happy to unarchive it and transfer ownership if someone is interested.    
 > [@iherman](https://github.com/iherman)
 
-> **This new version 3.6.1 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
+> **This new version 3.6.2 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
 
 For now, the package can only be installed from [TestPyPI][2] with command:  
 
@@ -19,25 +19,25 @@ What is it
 
 pyRdfa distiller/parser library. The distribution contains:
 
-- [./src/pyRdfa][3]: the Python library. You should copy the directory somewhere into your PYTHONPATH.
+- [./src/pyRdfa][3]: the Python library. You should copy the directory somewhere into your PYTHONPATH.  
   Alternatively, you can also install from [Test Python Package Index][1] with command:
-
-    `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
+  `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
 
 - [./scripts/CGI_RDFa.py][4]: can be used as a CGI script to invoke the library.  
   It has to be adapted to the local server setup, namely in setting the right paths.  
   This script has not been ported to Python 3.x. Open a [new issue][5] if you need it.
 
 - [./scripts/localRdfa.py][6]: script that can be run locally on to transform a file into RDF (on the standard output).  
-  Run the script with "-h" to get the available flags.  
+  Run the script with `-h` to get the available flags.  
   This script has not been ported to Python 3.x. Open a [new issue][5] if you need it.
 
 - [./doc][7]: pyRdfa3 [documentation][8] of the classes and functions (thanks to [pdoc][9]).
 
 The package primarily depends on:
 - Python version 3.7 or higher
-- [rdflib][10]: version 7.0.0 or higher is strongly recommended.
-- [html5lib][11]: version 1.1 or higher is strongly recommended.
+- [requests][10]: version 2.25.1 or higher is strongly recommended.
+- [rdflib][11]: version 6.1.1 or higher is strongly recommended.
+- [html5lib][12]: version 1.1.
 
 The package has been tested on Python version 3.7 and higher (no more support for Python 2.x).
 
@@ -61,5 +61,6 @@ possibly:
 [7]: <https://github.com/prrvchr/pyrdfa3/blob/master/doc/>
 [8]: <https://prrvchr.github.io/pyrdfa3/doc/pyRdfa.html>
 [9]: <https://pdoc.dev/docs/pdoc.html>
-[10]: <https://pypi.org/project/rdflib/7.0.0/>
-[11]: <https://pypi.org/project/html5lib/1.1/>
+[10]: <https://pypi.org/project/requests/2.31.0/>
+[11]: <https://pypi.org/project/rdflib/7.0.0/>
+[12]: <https://pypi.org/project/html5lib/1.1/>

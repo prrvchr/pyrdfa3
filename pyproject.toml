@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyRdfa3"
-version = "3.6.1"
+version = "3.6.2"
 authors = [
   { name="Ivan Herman & prrvchr", email="prrvchr@gmail.com" },
 ]
@@ -17,7 +17,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "rdflib>=7.0.0",
+  "requests>=2.25.1",
+  "rdflib>=6.1.1",
   "html5lib>=1.1"
 ]
 

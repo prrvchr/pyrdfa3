@@ -48,11 +48,12 @@ class URIOpener:
     @ivar last_modified_date: sets the last modified date if set in the header, None otherwise
     @ivar expiration_date: sets the expiration date if set in the header, I{current UTC plus one day} otherwise (this is used for caching purposes, hence this artificial setting)
     """
-    CONTENT_LOCATION    = 'Content-Location'
-    CONTENT_TYPE        = 'Content-Type'
-    LAST_MODIFIED        = 'Last-Modified'
-    EXPIRES                = 'Expires'
-    def __init__(self, name, additional_headers = {}, verify = True):
+    CONTENT_LOCATION = 'Content-Location'
+    CONTENT_TYPE =     'Content-Type'
+    LAST_MODIFIED =    'Last-Modified'
+    EXPIRES =          'Expires'
+
+    def __init__(self, name, additional_headers={}, verify=True):
         """
         @param name: URL to be opened
         @keyword additional_headers: additional HTTP request headers to be added to the call
@@ -66,7 +67,7 @@ class URIOpener:
             import requests
             # For security reason certificate verification is now done by default. But, can be
             # disabled for sites still go wrong because the cerficates are not o.k. with request...
-            r = requests.get(url, headers = additional_headers, verify = verify)
+            r = requests.get(url, headers=additional_headers, verify=verify)
             self.data = r.content
             self.headers = r.headers
             
@@ -91,7 +92,7 @@ class URIOpener:
                         break
             
             if URIOpener.CONTENT_LOCATION in self.headers:
-                self.location = urljoin(r.url,self.headers[URIOpener.CONTENT_LOCATION])
+                self.location = urljoin(r.url, self.headers[URIOpener.CONTENT_LOCATION])
             else:
                 self.location = name
             
@@ -128,9 +129,9 @@ class URIOpener:
 # 'safe' characters for the URI quoting, ie, characters that can safely stay as they are. Other 
 # special characters are converted to their %.. equivalents for namespace prefixes
 _unquotedChars = ':/\?=#~'
-_warnChars     = [' ','\n','\r','\t']
+_warnChars = [' ','\n','\r','\t']
 
-def quote_URI(uri, options = None):
+def quote_URI(uri, options=None):
     """
     'quote' a URI, ie, exchange special characters for their '%..' equivalents. Some of the characters
     may stay as they are (listed in L{_unquotedChars}. If one of the characters listed in L{_warnChars} 
@@ -191,7 +192,7 @@ def traverse_tree(node, func):
             traverse_tree(n, func)
 
 #########################################################################################################
-def return_XML(state, inode, base = True, xmlns = True):
+def return_XML(state, inode, base=True, xmlns=True):
     """
     Get (recursively) the XML Literal content of a DOM Element Node. (Most of the processing is done
     via a C{node.toxml} call of the xml minidom implementation.)
