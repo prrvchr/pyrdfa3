@@ -29,7 +29,7 @@ pyRdfa distiller/parser library. The distribution contains:
   This script has not been ported to Python 3.x. Open a [new issue][5] if you need it.
 
 - [./scripts/localRdfa.py][6]: script that can be run locally on to transform a file into RDF (on the standard output).  
-  Run the script with "-h" to et the available flags.  
+  Run the script with "-h" to get the available flags.  
   This script has not been ported to Python 3.x. Open a [new issue][5] if you need it.
 
 - [./doc][7]: pyRdfa3 [documentation][8] of the classes and functions (thanks to [pdoc][9]).
