@@ -13,14 +13,13 @@ For now, the package can only be installed from [TestPyPI][2] with command:
 PyRDFA
 ======
 
-
 What is it
 ----------
 
 pyRdfa distiller/parser library. The distribution contains:
 
 - [./src/pyRdfa][3]: the Python library. You should copy the directory somewhere into your PYTHONPATH.  
-  Alternatively, you can also install from [Test Python Package Index][1] with command:
+  Alternatively, you can also install from [Test Python Package Index][1] with command:  
   `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
 
 - [./scripts/CGI_RDFa.py][4]: can be used as a CGI script to invoke the library.  
