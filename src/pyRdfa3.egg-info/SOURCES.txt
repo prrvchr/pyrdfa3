@@ -30,11 +30,3 @@ src/pyRdfa3.egg-info/SOURCES.txt
 src/pyRdfa3.egg-info/dependency_links.txt
 src/pyRdfa3.egg-info/requires.txt
 src/pyRdfa3.egg-info/top_level.txt
-src/pyRdfaExtras/__init__.py
-src/pyRdfaExtras/serializers/XMLWriter.py
-src/pyRdfaExtras/serializers/__init__.py
-src/pyRdfaExtras/serializers/jsonserializer.py
-src/pyRdfaExtras/serializers/prettyXMLserializer.py
-src/pyRdfaExtras/serializers/prettyXMLserializer_3.py
-src/pyRdfaExtras/serializers/prettyXMLserializer_3_2.py
-src/pyRdfaExtras/serializers/turtleserializer.py
