@@ -1,5 +1,5 @@
-/.dist/
-/.settings/
+.settings/
 .project
 .pydevproject
+dist/
 

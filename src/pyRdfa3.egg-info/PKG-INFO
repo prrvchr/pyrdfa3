@@ -20,9 +20,9 @@ Requires-Dist: html5lib>=1.1
 > **Note:** since I retired a few months ago I do not really maintain this package any more. I would be more than happy if an interested party was interested to take over. In the meantime, I have "archived" the repository to clearly signal that there is no maintenance. I would be happy to unarchive it and transfer ownership if someone is interested.    
 > [@iherman](https://github.com/iherman)
 
-> **This new version 3.6.0 is now built and maintained on [pyRdfa3](https://prrvchr.github.io/pyrdfa3/)**
+> **This new version 3.6.1 is now built and maintained on [prrvchr.github.io/pyrdfa3](https://github.com/prrvchr/pyrdfa3/)**
 
-For now, the package can only be installed from [TestPyPI](https://test.pypi.org/manage/project/pyRdfa3/releases/) with command `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`.
+For now, the package can only be installed from [TestPyPI](https://test.pypi.org/project/pyRdfa3/) with command `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`.
 
 PyRDFA
 ======
@@ -34,7 +34,7 @@ What is it
 pyRdfa distiller/parser library. The distribution contains:
 
 - ./pyRdfa: the Python library. You should copy the directory somewhere into your PYTHONPATH.
-  Alternatively, you can also install from [Test Python Package Index](https://test.pypi.org/manage/project/pyRdfa3/releases/) with command:
+  Alternatively, you can also install from [Test Python Package Index](https://test.pypi.org/project/pyRdfa3/) with command:
 
     `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
 
