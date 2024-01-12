@@ -6,9 +6,9 @@
 
 > **This new version 3.6.2 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
 
-For now, the package can only be installed from [TestPyPI][2] with command:  
+The package can be installed from [PyPI][2] with command:  
 
-`pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
+`pip install pyRdfa3`
 
 PyRDFA
 ======
@@ -19,8 +19,8 @@ What is it
 pyRdfa distiller/parser library. The distribution contains:
 
 - [./src/pyRdfa][3]: the Python library. You should copy the directory somewhere into your PYTHONPATH.  
-  Alternatively, you can also install from [Test Python Package Index][2] with command:  
-  `pip install --index-url https://test.pypi.org/simple/ pyRdfa3`
+  Alternatively, you can also install from [Python Package Index][2] with command:  
+  `pip install pyRdfa3`
 
 - [./scripts/CGI_RDFa.py][4]: can be used as a CGI script to invoke the library.  
   It has to be adapted to the local server setup, namely in setting the right paths.  
@@ -52,7 +52,7 @@ possibly:
 - <http://www.w3.org/TR/rdfa-primer/>
 
 [1]: <https://github.com/prrvchr/pyrdfa3/>
-[2]: <https://test.pypi.org/project/pyRdfa3/>
+[2]: <https://pypi.org/project/pyRdfa3/>
 [3]: <https://github.com/prrvchr/pyrdfa3/tree/master/src/pyRdfa>
 [4]: <https://github.com/prrvchr/pyrdfa3/blob/master/scripts/CGI_RDFa.py>
 [5]: <https://github.com/prrvchr/pyrdfa3/issues/new>
