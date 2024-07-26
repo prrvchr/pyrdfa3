@@ -4,7 +4,7 @@
 > **Note:** since I retired a few months ago I do not really maintain this package any more. I would be more than happy if an interested party was interested to take over. In the meantime, I have "archived" the repository to clearly signal that there is no maintenance. I would be happy to unarchive it and transfer ownership if someone is interested.    
 > [@iherman](https://github.com/iherman)
 
-> **This new version 3.6.2 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
+> **This new version 3.6.3 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
 
 The package can be installed from [PyPI][2] with command:  
 
@@ -33,12 +33,12 @@ pyRdfa distiller/parser library. The distribution contains:
 - [./doc][7]: pyRdfa3 [documentation][8] of the classes and functions (thanks to [pdoc][9]).
 
 The package primarily depends on:
-- Python version 3.7 or higher
-- [requests][10]: version 2.25.1 or higher is strongly recommended.
-- [rdflib][11]: version 6.1.1 or higher is strongly recommended.
+- Python version 3.8 or higher.
+- [requests][10]: version 2.32.3 or higher.
+- [rdflib][11]: version 7.0.0 or higher.
 - [html5lib][12]: version 1.1.
 
-The package has been tested on Python version 3.7 and higher (no more support for Python 2.x).
+The package has been tested on Python version 3.8 and higher (no more support for Python 2.x).
 
 For the details on RDFa 1.1, see:
 
@@ -60,6 +60,6 @@ possibly:
 [7]: <https://github.com/prrvchr/pyrdfa3/blob/master/doc/>
 [8]: <https://prrvchr.github.io/pyrdfa3/doc/pyRdfa.html>
 [9]: <https://pdoc.dev/docs/pdoc.html>
-[10]: <https://pypi.org/project/requests/2.31.0/>
+[10]: <https://pypi.org/project/requests/2.32.3/>
 [11]: <https://pypi.org/project/rdflib/7.0.0/>
 [12]: <https://pypi.org/project/html5lib/1.1/>
