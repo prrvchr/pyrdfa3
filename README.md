@@ -4,7 +4,7 @@
 > **Note:** since I retired a few months ago I do not really maintain this package any more. I would be more than happy if an interested party was interested to take over. In the meantime, I have "archived" the repository to clearly signal that there is no maintenance. I would be happy to unarchive it and transfer ownership if someone is interested.    
 > [@iherman](https://github.com/iherman)
 
-> **This new version 3.6.4 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
+> **This new version 3.6.5 is now built and maintained on [prrvchr.github.io/pyrdfa3][1]**
 
 The package can be installed from [PyPI][2] with command:  
 
