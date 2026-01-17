@@ -3,7 +3,7 @@ requires = ["setuptools>=71.1.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyRdfa3"
+name = "pyrdfa3"
 version = "3.6.5"
 authors = [
   { name="Ivan Herman & prrvchr", email="prrvchr@gmail.com" },

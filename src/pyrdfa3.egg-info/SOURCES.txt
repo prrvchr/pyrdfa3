@@ -25,8 +25,8 @@ src/pyRdfa/transform/__init__.py
 src/pyRdfa/transform/lite.py
 src/pyRdfa/transform/metaname.py
 src/pyRdfa/transform/prototype.py
-src/pyRdfa3.egg-info/PKG-INFO
-src/pyRdfa3.egg-info/SOURCES.txt
-src/pyRdfa3.egg-info/dependency_links.txt
-src/pyRdfa3.egg-info/requires.txt
-src/pyRdfa3.egg-info/top_level.txt
+src/pyrdfa3.egg-info/PKG-INFO
+src/pyrdfa3.egg-info/SOURCES.txt
+src/pyrdfa3.egg-info/dependency_links.txt
+src/pyrdfa3.egg-info/requires.txt
+src/pyrdfa3.egg-info/top_level.txt
