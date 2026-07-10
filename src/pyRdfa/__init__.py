@@ -688,8 +688,7 @@ class pyRdfa:
         for name in names:
             self.graph_from_source(name, graph, rdfOutput)
 
-        # Stupid difference between python2 and python3...
-        return str(graph.serialize(format=outputFormat), encoding='utf-8')
+        return graph.serialize(format=outputFormat)
 
 
     def rdf_from_source(self, name, outputFormat = "turtle", rdfOutput = False):
@@ -929,4 +928,3 @@ def processURI(uri, outputFormat, form={}):
         retval +="</body>\n"
         retval +="</html>\n"
         return retval
-
