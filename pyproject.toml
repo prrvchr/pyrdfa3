@@ -17,9 +17,13 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "requests>=2.32.3",
   "rdflib>=7.0.0",
   "html5lib>=1.1"
+]
+
+[project.optional-dependencies]
+http = [
+  "requests>=2.32.3"
 ]
 
 [project.urls]

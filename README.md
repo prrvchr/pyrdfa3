@@ -34,9 +34,14 @@ pyRdfa distiller/parser library. The distribution contains:
 
 The package primarily depends on:
 - Python version 3.8 or higher.
-- [requests][10]: version 2.32.3 or higher.
 - [rdflib][11]: version 7.0.0 or higher.
 - [html5lib][12]: version 1.1.
+
+Optionally, to let pyRdfa fetch remote URLs itself:
+- [requests][10]: version 2.32.3 or higher, installed with the `http` extra:  
+  `pip install pyRdfa3[http]`
+
+Without it, pyRdfa still parses any file, string or stream you pass it; only fetching a URL raises an error asking for the extra.
 
 The package has been tested on Python version 3.8 and higher (no more support for Python 2.x).
 

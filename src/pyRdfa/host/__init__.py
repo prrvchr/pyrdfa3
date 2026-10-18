@@ -8,7 +8,7 @@ This module may have to be modified if a new host language is added to the syste
 
 @summary: RDFa Host package
 @requires: Python version 3.8 or higher
-@requires: U{requests<https://pypi.org/project/requests/2.32.3/>}; version 2.32.3 or higher.
+@requires: U{requests<https://pypi.org/project/requests/2.32.3/>}; version 2.32.3 or higher, only to fetch remote URLs (install with C{pip install pyrdfa3[http]}).
 @requires: U{rdflib<https://pypi.org/project/rdflib/7.0.0/>}; version 7.0.0 or higher.
 @requires: U{html5lib<https://pypi.org/project/html5lib/1.1/>}; version 1.1 or higher.
 @organization: U{World Wide Web Consortium<http://www.w3.org>}

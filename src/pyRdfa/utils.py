@@ -64,7 +64,10 @@ class URIOpener:
             if 'Accept' not in additional_headers:
                 additional_headers['Accept'] = 'text/html, application/xhtml+xml'
                 
-            import requests
+            try:
+                import requests
+            except ImportError:
+                raise ImportError("Fetching remote URLs requires the 'requests' package: pip install pyrdfa3[http]")
             # For security reason certificate verification is now done by default. But, can be
             # disabled for sites still go wrong because the cerficates are not o.k. with request...
             r = requests.get(url, headers=additional_headers, verify=verify)
